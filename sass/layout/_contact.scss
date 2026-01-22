@@ -1,0 +1,48 @@
+@use "../abstracts/variables";
+@use "../abstracts/mixins";
+
+.contact {
+  min-height: 90vh;
+  padding-top: 80px;
+  @include mixins.flex-center;
+  text-align: center;
+  padding-inline: 2rem;
+  font-family: variables.$font-primary;
+
+  &__inner {
+    max-width: 700px;
+  }
+
+  &__title {
+    font-size: 3rem;
+    color: variables.$color-primary;
+  }
+
+  &__availability {
+    font-size: 2.5rem;
+    margin: 1.5rem 0 2rem;
+    color: variables.$color-text;
+    opacity: 0.9;
+  }
+}
+
+@media (max-width: 900px) {
+  .contact {
+    min-height: 100vh;
+    padding-top: 80px;
+    padding-inline: 1.6rem;
+  }
+
+  .contact__inner {
+    max-width: 560px;
+  }
+
+  .contact__title {
+    font-size: 2.4rem;
+  }
+
+  .contact__availability {
+    font-size: 2rem;
+    margin: 1.2rem 0 1.8rem;
+  }
+}

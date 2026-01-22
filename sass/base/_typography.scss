@@ -1,0 +1,9 @@
+@use "../abstracts/variables";
+
+.section-title {
+  font-size: 2rem;
+  color: variables.$color-primary;
+  margin-bottom: 1rem;
+  letter-spacing: 2px;
+  text-align: center;
+}

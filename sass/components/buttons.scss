@@ -1,0 +1,86 @@
+@use "../abstracts/variables";
+
+.btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 1rem 2.25rem;
+  border-radius: 5rem;
+  border: none;
+  cursor: pointer;
+
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1;
+  white-space: nowrap;
+
+  text-decoration: none;
+  background-color: transparent;
+
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+  &:link,
+  &:visited {
+    text-decoration: none;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    border-radius: inherit;
+    z-index: -1;
+
+    transition: transform 0.4s ease, opacity 0.4s ease;
+  }
+
+  &--primary,
+  &--primary:link,
+  &--primary:visited {
+    background-color: variables.$color-primary;
+    color: variables.$color-dark-1;
+
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
+  }
+
+  &--primary::after {
+    background-color: variables.$color-primary;
+  }
+
+  &--primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.45);
+
+    &::after {
+      transform: scale(1.4);
+      opacity: 0;
+    }
+  }
+
+  &--primary:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  }
+
+  &:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(variables.$color-primary, 0.4),
+      0 6px 16px rgba(0, 0, 0, 0.25);
+  }
+
+  &:disabled,
+  &--disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+    pointer-events: none;
+    transform: none;
+    box-shadow: none;
+
+    &::after {
+      display: none;
+    }
+  }
+}

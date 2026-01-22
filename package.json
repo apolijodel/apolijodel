@@ -1,0 +1,18 @@
+{
+  "name": "jodel-portfolio",
+  "version": "1.0.0",
+  "description": "Personal portfolio website",
+  "scripts": {
+    "sass:build": "sass sass/main.scss css/style.css",
+    "sass:watch": "sass --watch sass/main.scss:css/style.css",
+    "css:prefix": "postcss css/style.css -u autoprefixer -o css/style.prefixed.css",
+    "dev": "npm run sass:watch"
+  },
+  "author": "Jodel Apoli",
+  "license": "ISC",
+  "devDependencies": {
+    "sass": "^1.97.2",
+    "postcss-cli": "^11.0.0",
+    "autoprefixer": "^10.4.19"
+  }
+}
